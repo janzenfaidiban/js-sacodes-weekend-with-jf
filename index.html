@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Tambahkan script JavaScript di sini -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ambil elemen formulir
+            var form = document.querySelector('form');
+            var namaLengkap = document.getElementById('namaLengkap');
+
+            // Tambahkan event listener untuk menangkap submit form
+            form.addEventListener('submit', function (event) {
+                // Mencegah pengiriman formulir ke server
+                event.preventDefault();
+
+                // Ambil nilai dari input full_name
+                var fullName = document.querySelector('input[name="full_name"]').value;
+                var lastName = document.querySelector('input[name="last_name"]').value;
+
+                // Tampilkan nilai di alert
+                namaLengkap.textContent = fullName + ' ' + lastName;
+                alert('Nama lengkap: ' + fullName + ' ' + lastName);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <form>
+        <input type="text" name="full_name">
+        <input type="text" name="last_name">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="namaLengkap"></div>
+
+</body>
+</html>
